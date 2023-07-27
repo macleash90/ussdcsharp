@@ -10,3 +10,4 @@ Run SessionsTable.sql located in the root of the application to create the Sessi
 
 ###Step 3
 Import the file named 'CS USSD.postman_collection.json' into Postman or use the USSD simulator at https://simussd.interpayafrica.com/ to test the application
+Ussd menus would be programmed in file USSDCSharp\USSDCSharp\UssdMenu.cs
