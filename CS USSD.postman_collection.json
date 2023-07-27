@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "088aa3fd-740b-48cc-8127-97a9ab3ea60a",
+		"name": "CS USSD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23222431",
+		"_collection_link": "https://crimson-capsule-881219.postman.co/workspace/My-Workspace~c9d56f30-8797-41ad-85f7-845d743bfbd8/collection/23222431-088aa3fd-740b-48cc-8127-97a9ab3ea60a?action=share&creator=23222431&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Initial Ussd Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"SessionId\":\"abct5657\",\r\n    \"Token\":\"c66c7468047e4e5e8f8b49687f6d4a770\",\r\n    \"AppUrl\":\"http://localhost:5022/api/Ussd\",\r\n    \"Mobile\":\"233244371378\",\r\n    \"ServiceCode\":\"*789#\",\r\n    \"Type\":\"initiation\",\r\n    \"Message\":\"*789#\",\r\n    \"Operator\":\"MTN\",\r\n    \"ConfigPatternCode\":null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Ussd",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Ussd"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Initial Ussd Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Token\": \"9fc7703e-bfbd-48bc-97d6-5e08a584e726\",\r\n  \"AppUrl\": \"http://ab53-41-215-163-6.ngrok.io/api/ubuntu/banking\",\r\n  \"Mobile\": \"233266588413\",\r\n  \"SessionId\": \"65fe9a76f35c447584aa96b92059a34b1\",\r\n  \"ServiceCode\": \"*789#\",\r\n  \"Type\": \"Initiation\",\r\n  \"Message\": \"*789#\",\r\n  \"Operator\": \"Airtel\",\r\n  \"ConfigPatternCode\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/ubuntu/banking",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"ubuntu",
+								"banking"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n    \"Message\": \"Welcome to ABC Banking.\\n1. Personal Banking\\n2. Agency Banking\",\n    \"Type\": \"Response\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Next USSD Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"SessionId\":\"abct5657\",\r\n\"Token\":\"e68a341a-8534-4ed0-8939-72491043f849\",\r\n\"AppUrl\":\"http://localhost:5022/api/Ussd\",\r\n\"Mobile\":\"233244371378\",\r\n\"ServiceCode\":\"*789#\",\r\n\"Type\":\"Response\",\r\n\"Message\":\"1\",\r\n\"Operator\":\"MTN\",\r\n\"ConfigPatternCode\":null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Ussd",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Ussd"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Next USSD Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Token\": \"9fc7703e-bfbd-48bc-97d6-5e08a584e726\",\r\n  \"AppUrl\": \"http://ab53-41-215-163-6.ngrok.io/api/ubuntu/banking\",\r\n  \"Mobile\": \"233266588413\",\r\n  \"SessionId\": \"65fe9a76f35c447584aa96b92059a34b1\",\r\n  \"ServiceCode\": \"*789#\",\r\n  \"Type\": \"Response\",\r\n  \"Message\": \"1\",\r\n  \"Operator\": \"Airtel\",\r\n  \"ConfigPatternCode\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/ubuntu/banking",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"ubuntu",
+								"banking"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\r\n    \"Message\": \"Mobile number not registered, kindly open an account with us at our nearest branch.\",\r\n    \"Type\": \"Release\"\r\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5001",
+			"type": "string"
+		}
+	]
+}
